@@ -6,17 +6,21 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+ARG BuildConfiguration=Release
 WORKDIR /src
-COPY ["Tgs.Game.Round.Aggregate.Service/Tgs.Game.Round.Aggregate.Service.csproj", "Tgs.Game.Round.Aggregate.Service/"]
-RUN dotnet restore "Tgs.Game.Round.Aggregate.Service/Tgs.Game.Round.Aggregate.Service.csproj"
+COPY ["Tgs.Game.Type.Round.Aggregate.Service/Tgs.Game.Type.Round.Aggregate.Service.csproj", "Tgs.Game.Type.Round.Aggregate.Service/"]
+COPY ["Tgs.Game.Type.Round.Aggregate.Core/Tgs.Game.Type.Round.Aggregate.Core.csproj", "Tgs.Game.Type.Round.Aggregate.Core/"]
+COPY ["Tgs.Game.Type.Round.Aggregate.Repositories/Tgs.Game.Type.Round.Aggregate.Repositories.csproj", "Tgs.Game.Type.Round.Aggregate.Repositories/"]
+RUN dotnet restore "Tgs.Game.Type.Round.Aggregate.Service/Tgs.Game.Type.Round.Aggregate.Service.csproj"
 COPY . .
-WORKDIR "/src/Tgs.Game.Round.Aggregate.Service"
-RUN dotnet build "Tgs.Game.Round.Aggregate.Service.csproj" -c Release -o /app/build
+WORKDIR "/src/Tgs.Game.Type.Round.Aggregate.Service"
+RUN dotnet build "Tgs.Game.Type.Round.Aggregate.Service.csproj" -c $BuildConfiguration -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Tgs.Game.Round.Aggregate.Service.csproj" -c Release -o /app/publish /p:UseAppHost=false
+ARG BuildConfiguration
+RUN dotnet publish "Tgs.Game.Type.Round.Aggregate.Service.csproj" -c $BuildConfiguration -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Tgs.Game.Round.Aggregate.Service.dll"]
+ENTRYPOINT ["dotnet", "Tgs.Game.Type.Round.Aggregate.Service.dll"]
