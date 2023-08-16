@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.Game.Type.Round.Aggregate.Service", "Tgs.Game.Type.Round.Aggregate.Service\Tgs.Game.Type.Round.Aggregate.Service.csproj", "{CD6A44AC-0A75-4FA4-BCA9-9A7ADE0841DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.Game.Type.Round.Aggregate.Repositories", "Tgs.Game.Type.Round.Aggregate.Repositories\Tgs.Game.Type.Round.Aggregate.Repositories.csproj", "{346A5FC2-23F2-467E-890A-EC78E34171E1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.Game.Type.Round.Aggregate.Core", "Tgs.Game.Type.Round.Aggregate.Core\Tgs.Game.Type.Round.Aggregate.Core.csproj", "{2869636A-D850-4EEB-B03C-ACE4D6961A08}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.Game.Type.Round.Aggregate.Client", "Tgs.Game.Type.Round.Aggregate.Client\Tgs.Game.Type.Round.Aggregate.Client.csproj", "{8F5841BC-3D0B-424F-BDAA-D5498E2DE3F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.Game.Type.Round.Aggregate.IntegrationTests", "Tgs.Game.Type.Round.Aggregate.IntegrationTests\Tgs.Game.Type.Round.Aggregate.IntegrationTests.csproj", "{849548E7-0554-470C-801A-2612ACF0915E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tgs.Game.Type.Round.Aggregate.UnitTest", "Tgs.Game.Type.Round.Aggregate.UnitTest\Tgs.Game.Type.Round.Aggregate.UnitTest.csproj", "{5334447F-5B2E-493B-9399-F10162732DF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD6A44AC-0A75-4FA4-BCA9-9A7ADE0841DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD6A44AC-0A75-4FA4-BCA9-9A7ADE0841DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD6A44AC-0A75-4FA4-BCA9-9A7ADE0841DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD6A44AC-0A75-4FA4-BCA9-9A7ADE0841DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346A5FC2-23F2-467E-890A-EC78E34171E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346A5FC2-23F2-467E-890A-EC78E34171E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346A5FC2-23F2-467E-890A-EC78E34171E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346A5FC2-23F2-467E-890A-EC78E34171E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2869636A-D850-4EEB-B03C-ACE4D6961A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2869636A-D850-4EEB-B03C-ACE4D6961A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2869636A-D850-4EEB-B03C-ACE4D6961A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2869636A-D850-4EEB-B03C-ACE4D6961A08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F5841BC-3D0B-424F-BDAA-D5498E2DE3F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F5841BC-3D0B-424F-BDAA-D5498E2DE3F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F5841BC-3D0B-424F-BDAA-D5498E2DE3F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F5841BC-3D0B-424F-BDAA-D5498E2DE3F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{849548E7-0554-470C-801A-2612ACF0915E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{849548E7-0554-470C-801A-2612ACF0915E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{849548E7-0554-470C-801A-2612ACF0915E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{849548E7-0554-470C-801A-2612ACF0915E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5334447F-5B2E-493B-9399-F10162732DF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5334447F-5B2E-493B-9399-F10162732DF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5334447F-5B2E-493B-9399-F10162732DF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5334447F-5B2E-493B-9399-F10162732DF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95FAC131-0E70-41F5-BC82-E6AACA804BAE}
+	EndGlobalSection
+EndGlobal
