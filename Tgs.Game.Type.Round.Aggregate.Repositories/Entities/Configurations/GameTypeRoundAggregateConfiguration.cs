@@ -17,8 +17,6 @@ namespace Tgs.Game.Round.Aggregate.Repositories.Entities.Configurations
 
             entity.ToTable("game_type_round_aggregates", "report");
 
-            entity.HasIndex(e => new { e.From, e.To, e.BrandId, e.AgentId, e.PlayerCode }, "ix_game_type_round_aggregate_multiple_keys");
-
             entity.Property(e => e.BrandId).HasColumnName("brand_id");
             entity.Property(e => e.AgentId).HasColumnName("agent_id");
             entity.Property(e => e.PlayerCode).HasColumnName("player_code");
@@ -28,6 +26,7 @@ namespace Tgs.Game.Round.Aggregate.Repositories.Entities.Configurations
             .HasPrecision(18, 6)
             .HasColumnName("bet_amount");
             entity.Property(e => e.CreatedOn).HasColumnName("created_on");
+            entity.Property(e => e.GameId).HasColumnName("game_id");
             entity.Property(e => e.GameProviderId).HasColumnName("game_provider_id");
             entity.Property(e => e.GameType).HasColumnName("game_type");
             entity.Property(e => e.OriginalTurnover)

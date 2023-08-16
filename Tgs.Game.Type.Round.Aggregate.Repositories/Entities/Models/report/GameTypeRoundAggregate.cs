@@ -21,6 +21,8 @@ public partial class GameTypeRoundAggregate
 
     public Guid GameProviderId { get; set; }
 
+    public int GameId { get; set; }
+
     public short GameType { get; set; }
 
     public decimal BetAmount { get; set; }

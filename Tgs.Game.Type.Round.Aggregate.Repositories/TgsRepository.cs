@@ -37,6 +37,7 @@ WITH rounds AS(
 		p.brand_id,
 		p.agent_id,
 		g.game_provider_id,
+        g.id game_id,
 		p.player_code,
         v.level vip_level,
 		g.type game_type,
@@ -56,8 +57,8 @@ WITH rounds AS(
         left join dbo.brand_games bg on bg.brand_id = r.brand_id and bg.game_id = r.game_id
 		group by p.brand_id, g.game_provider_id, p.player_code, p.agent_id, v.id,g.type)
 
-        INSERT INTO report.game_type_round_aggregates (brand_id,agent_id,player_code,game_provider_id,game_type,bet_amount,valid_bet_amount,original_turnover,turnover,win_loss,created_on,""from"",""to"",vip_level,round_count)
-		SELECT brand_id,agent_id,player_code,game_provider_id,game_type,bet_amount,valid_bet_amount,original_turnover,turnover,win_loss,@created_on,@from,@to,vip_level,round_count
+        INSERT INTO report.game_type_round_aggregates (brand_id,agent_id,player_code,game_provider_id,game_id,game_type,bet_amount,valid_bet_amount,original_turnover,turnover,win_loss,created_on,""from"",""to"",vip_level,round_count)
+		SELECT brand_id,agent_id,player_code,game_provider_id,game_id,game_type,bet_amount,valid_bet_amount,original_turnover,turnover,win_loss,@created_on,@from,@to,vip_level,round_count
         FROM rows";
 
         var conn = _context.Database.GetDbConnection();
