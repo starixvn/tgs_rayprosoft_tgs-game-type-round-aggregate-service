@@ -8,6 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 ARG BuildConfiguration=Release
 WORKDIR /src
+COPY ["nuget.config", "."]
 COPY ["Tgs.Game.Type.Round.Aggregate.Service/Tgs.Game.Type.Round.Aggregate.Service.csproj", "Tgs.Game.Type.Round.Aggregate.Service/"]
 COPY ["Tgs.Game.Type.Round.Aggregate.Core/Tgs.Game.Type.Round.Aggregate.Core.csproj", "Tgs.Game.Type.Round.Aggregate.Core/"]
 COPY ["Tgs.Game.Type.Round.Aggregate.Repositories/Tgs.Game.Type.Round.Aggregate.Repositories.csproj", "Tgs.Game.Type.Round.Aggregate.Repositories/"]
