@@ -55,7 +55,7 @@ WITH rounds AS(
 		join dbo.players p on r.player_code = p.player_code
         join dbo.vip_levels v on v.id = p.vip_id
         left join dbo.brand_games bg on bg.brand_id = r.brand_id and bg.game_id = r.game_id
-		group by p.brand_id, g.game_provider_id, p.player_code, p.agent_id, v.id,g.type)
+		group by p.brand_id, g.game_provider_id, g.id, p.player_code, p.agent_id, v.id,g.type)
 
         INSERT INTO report.game_type_round_aggregates (brand_id,agent_id,player_code,game_provider_id,game_id,game_type,bet_amount,valid_bet_amount,original_turnover,turnover,win_loss,created_on,""from"",""to"",vip_level,round_count)
 		SELECT brand_id,agent_id,player_code,game_provider_id,game_id,game_type,bet_amount,valid_bet_amount,original_turnover,turnover,win_loss,@created_on,@from,@to,vip_level,round_count
@@ -94,6 +94,6 @@ WITH rounds AS(
     public Task<bool> ExecutionTimeIsExistsAsync(AggregateType type, DateTime from, DateTime to,
         CancellationToken cancellationToken = default)
         => _context.AggregateExecutionTimes.AnyAsync(
-            x => x.AggregateType == (short)type && x.From == from.ToUniversalTime() && x.To == to.ToUniversalTime(),
+            x => x.AggregateType == (short)type && x.From == from && x.To == to,
             cancellationToken);
 }
